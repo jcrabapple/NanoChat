@@ -16,6 +16,6 @@ data class Model(
     }
 
     companion object {
-        val defaultModel = Model("openrouter/auto")
+        val defaultModel = Model("chatgpt-4o-latest")
     }
 }

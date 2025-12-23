@@ -31,7 +31,7 @@ fun ModelSelectorChip(model: Model, onClick: () -> Unit) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = model.ownedBy ?: model.id.substringBefore('/'),
+                text = "NanoGPT",
                 style = LocalTypography.current.label1,
                 color = AiyoTheme.colors.textSecondary,
                 fontStyle = FontStyle.Italic
@@ -52,7 +52,7 @@ fun ModelSelectorChip(model: Model, onClick: () -> Unit) {
             ) {
                 Spacer(Modifier.width(6.dp))
                 Text(
-                    text = model.id.substringAfter('/'),
+                    text = model.id,
                     color = AiyoTheme.colors.tertiary,
                     style = LocalTypography.current.body3
                 )

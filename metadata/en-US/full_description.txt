@@ -1,21 +1,21 @@
-Aiyo is an AI chat app that allows you to chat with hundreds of models by bringing your own OpenRouter API key. It's designed to be simple, elegant and easy-to-use.
+NanoChat is an AI chat app that allows you to chat with hundreds of models by bringing your own NanoGPT API key. It's designed to be simple, elegant and easy-to-use.
 
 
 <b>Features:</b>
 • Chat with any model of your choice
-• Access to over 500 models on OpenRouter
+• Access to all models on NanoGPT
 • Supports reasoning, web-search, and chat history
-• Privacy-respectful: no call data is collected by Aiyo
+• Privacy-respectful: no call data is collected by NanoChat
 
 <b>Privacy & Security:</b>
-Aiyo prioritizes your privacy. The app itself does not collect any information. The app however does not take any responsibility for any information collected by OpenRouter or the model provider.
+NanoChat prioritizes your privacy. The app itself does not collect any information. The app however does not take any responsibility for any information collected by NanoGPT or the model provider.
 
 <b>How it works:</b>
-The app acts as a client that interacts with the OpenRouter API endpoints using the API key you provide.
+The app acts as a client that interacts with the NanoGPT API endpoints using the API key you provide.
 
 <b>Requirements:</b>
 • Android 7 (API level 24) or higher
-• <a href="https://openrouter.ai/">OpenRouter</a> API key
+• <a href="https://nano-gpt.com/">NanoGPT</a> API key
 
 <b>Open Source:</b>
-Aiyo is open source software. You can review the code, contribute, or build it yourself from the source code available on GitHub.
+NanoChat is open source software. You can review the code, contribute, or build it yourself from the source code available on GitHub.

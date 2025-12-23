@@ -1,15 +1,15 @@
-# Aiyo
+# NanoChat
 
 ## Description
 
-Aiyo is an AI chat app that allows you to chat with hundreds of models by bringing your own OpenRouter API key. It's designed to be simple, elegant and easy-to-use.
+NanoChat is an AI chat app that allows you to chat with hundreds of models by bringing your own NanoGPT API key. It's designed to be simple, elegant and easy-to-use.
 
 ## Features
 
 - 💬 Chat with any model of your choice
-- ✨ Access to over 500 models on OpenRouter
+- ✨ Access to all models on NanoGPT
 - 🧠 Supports reasoning, web-search 🌐, and chat history 📜
-- 🔒 Privacy-respectful: no data is collected by Aiyo
+- 🔒 Privacy-respectful: no data is collected by NanoChat
 
 ## Installation
 <a href="https://f-droid.org/en/packages/com.beradeep.aiyo/"><img height="100" src="https://github.com/user-attachments/assets/65b70711-9d16-4334-bf3d-4b2872495c25" /></a>
@@ -30,7 +30,7 @@ Aiyo is an AI chat app that allows you to chat with hundreds of models by bringi
 - **Kotlin** - Primary programming language
 - **Jetpack Compose** - Modern UI toolkit
 - **MVVM Architecture** - Clean architecture pattern
-- **[OpenAI Kotlin](https://github.com/aallam/openai-kotlin)** - For interacting with OpenRouter
+- **[OpenAI Kotlin](https://github.com/aallam/openai-kotlin)** - For interacting with NanoGPT API
 
 ## Contributing
 
@@ -44,7 +44,7 @@ Contributions are welcome! Here's how you can help:
 
 ## Star the Project ⭐
 
-If you like Aiyo, please consider giving it a star on GitHub to show your support and help others discover the project.
+If you like NanoChat, please consider giving it a star on GitHub to show your support and help others discover the project.
 
 ## License
 

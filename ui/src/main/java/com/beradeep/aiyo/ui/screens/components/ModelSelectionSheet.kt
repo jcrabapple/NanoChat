@@ -115,13 +115,8 @@ fun ModelSelectionSheet(
                                 verticalArrangement = Arrangement.Center
                             ) {
                                 Text(
-                                    text = model.ownedBy ?: model.id.substringBefore('/'),
+                                    text = model.id,
                                     style = LocalTypography.current.h4
-                                )
-                                Text(
-                                    modifier = Modifier.padding(top = 2.dp),
-                                    text = model.id.substringAfter('/'),
-                                    style = LocalTypography.current.body2
                                 )
                                 Spacer(modifier = Modifier.height(8.dp))
                             }

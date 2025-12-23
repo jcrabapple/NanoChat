@@ -36,18 +36,18 @@ fun ApiKeyDialog(
         onDismissRequest = onDismiss,
         onConfirmClick = { onSave(key) },
         title = "API Key",
-        text = "Enter your OpenRouter API key",
+        text = "Enter your NanoGPT API key",
         confirmButtonText = "Save",
         dismissButtonText = "Cancel",
         content = {
             Card {
                 Column(modifier = Modifier.padding(24.dp)) {
-                    Text(text = "OpenRouter API key", style = LocalTypography.current.h3)
+                    Text(text = "NanoGPT API key", style = LocalTypography.current.h3)
                     Spacer(modifier = Modifier.height(16.dp))
                     OutlinedTextField(
                         value = key,
                         onValueChange = { key = it.trim() },
-                        placeholder = { Text(text = "sk-or-v1-...") },
+                        placeholder = { Text(text = "Your API key...") },
                         visualTransformation = PasswordVisualTransformation()
                     )
                     Spacer(modifier = Modifier.height(16.dp))
