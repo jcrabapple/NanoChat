@@ -17,7 +17,7 @@ import com.beradeep.aiyo.ui.AiyoTheme
 fun HorizontalDivider(
     modifier: Modifier = Modifier,
     thickness: Dp = DividerDefaults.Thickness,
-    color: Color = DividerDefaults.color
+    color: Color = AiyoTheme.colorScheme.outlineVariant
 ) = Canvas(
     modifier
         .fillMaxWidth()
@@ -35,7 +35,7 @@ fun HorizontalDivider(
 fun VerticalDivider(
     modifier: Modifier = Modifier,
     thickness: Dp = DividerDefaults.Thickness,
-    color: Color = DividerDefaults.color
+    color: Color = AiyoTheme.colorScheme.outlineVariant
 ) = Canvas(
     modifier
         .fillMaxHeight()
@@ -51,5 +51,5 @@ fun VerticalDivider(
 
 object DividerDefaults {
     val Thickness: Dp = 1.dp
-    val color: Color @Composable get() = AiyoTheme.colors.surface
+    val color: Color @Composable get() = AiyoTheme.colorScheme.outlineVariant
 }

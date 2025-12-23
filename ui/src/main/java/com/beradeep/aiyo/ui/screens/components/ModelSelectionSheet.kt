@@ -73,7 +73,7 @@ fun ModelSelectionSheet(
             Text(
                 modifier = Modifier.padding(horizontal = 16.dp),
                 text = "Select Model",
-                style = LocalTypography.current.h2
+                style = LocalTypography.current.headlineMedium
             )
             Spacer(modifier = Modifier.height(12.dp))
             TextField(
@@ -95,7 +95,7 @@ fun ModelSelectionSheet(
                 ) { model ->
                     val isSelected = model.id == selectedModel.id
                     Surface(
-                        color = if (isSelected) AiyoTheme.colors.surface else AiyoTheme.colors.background
+                        color = if (isSelected) AiyoTheme.colorScheme.surface else AiyoTheme.colorScheme.background
                     ) {
                         Row(
                             modifier =
@@ -116,7 +116,7 @@ fun ModelSelectionSheet(
                             ) {
                                 Text(
                                     text = model.id,
-                                    style = LocalTypography.current.h4
+                                    style = LocalTypography.current.titleLarge
                                 )
                                 Spacer(modifier = Modifier.height(8.dp))
                             }

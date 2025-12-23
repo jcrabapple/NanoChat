@@ -36,8 +36,8 @@ fun ModalBottomSheet(
             sheetState = sheetState,
             onDismissRequest = onDismissRequest,
             sheetGesturesEnabled = sheetGesturesEnabled,
-            containerColor = AiyoTheme.colors.background,
-            scrimColor = AiyoTheme.colors.scrim,
+            containerColor = AiyoTheme.colorScheme.surface,
+            scrimColor = AiyoTheme.colorScheme.scrim,
             shape = BottomSheetDefaults.ModalBottomSheetShape,
             dragHandle = dragHandle,
             content = content
@@ -70,7 +70,7 @@ internal object BottomSheetDefaults {
             Spacer(
                 Modifier
                     .size(width = DragHandleWidth, height = DragHandleHeight)
-                    .background(color = AiyoTheme.colors.secondary, shape = DragHandleShape)
+                    .background(color = AiyoTheme.colorScheme.onSurfaceVariant, shape = DragHandleShape)
             )
         }
     }

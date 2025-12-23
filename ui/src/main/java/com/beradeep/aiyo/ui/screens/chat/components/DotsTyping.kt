@@ -30,7 +30,7 @@ fun DotsTyping() {
             .size(dotSize)
             .offset(y = -offset.dp)
             .background(
-                color = AiyoTheme.colors.secondary,
+                color = AiyoTheme.colorScheme.secondary,
                 shape = CircleShape
             )
     )

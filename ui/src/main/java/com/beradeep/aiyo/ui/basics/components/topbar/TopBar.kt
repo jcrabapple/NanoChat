@@ -167,8 +167,8 @@ object TopBarDefaults {
 
     @Composable
     fun topBarColors(
-        containerColor: Color = AiyoTheme.colors.background,
-        scrolledContainerColor: Color = AiyoTheme.colors.background
+        containerColor: Color = AiyoTheme.colorScheme.background,
+        scrolledContainerColor: Color = AiyoTheme.colorScheme.background
     ): TopBarColors = TopBarColors(
         containerColor,
         scrolledContainerColor

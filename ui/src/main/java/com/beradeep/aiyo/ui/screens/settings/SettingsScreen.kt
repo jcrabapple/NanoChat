@@ -1,7 +1,6 @@
 package com.beradeep.aiyo.ui.screens.settings
 
 import androidx.compose.foundation.gestures.detectTapGestures
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -26,7 +25,6 @@ import androidx.compose.material3.SegmentedButton
 import androidx.compose.material3.SegmentedButtonDefaults
 import androidx.compose.material3.SingleChoiceSegmentedButtonRow
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -43,9 +41,6 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.beradeep.aiyo.domain.model.Model
 import com.beradeep.aiyo.domain.model.ThemeType
 import com.beradeep.aiyo.ui.AiyoTheme
-import com.beradeep.aiyo.ui.DarkColors
-import com.beradeep.aiyo.ui.LightColors
-import com.beradeep.aiyo.ui.LocalColors
 import com.beradeep.aiyo.ui.LocalTypography
 import com.beradeep.aiyo.ui.basics.components.HorizontalDivider
 import com.beradeep.aiyo.ui.basics.components.Icon
@@ -85,7 +80,7 @@ fun SettingsScreen(
                         )
                     }
                     Spacer(Modifier.width(24.dp))
-                    Text("Settings", style = LocalTypography.current.h1)
+                    Text("Settings", style = LocalTypography.current.headlineLarge)
                 }
             }
         }
@@ -188,13 +183,12 @@ private fun SettingsSection(
         ) {
             Icon(
                 imageVector = icon,
-                contentDescription = null,
-                tint = AiyoTheme.colors.primary,
-                modifier = Modifier.size(24.dp)
+                modifier = Modifier.size(24.dp),
+                tint = AiyoTheme.colorScheme.primary
             )
             Text(
                 text = title,
-                style = LocalTypography.current.h3
+                style = LocalTypography.current.headlineSmall
             )
         }
         Spacer(modifier = Modifier.height(16.dp))
@@ -214,7 +208,7 @@ private fun ApiKeySetting(
     ) {
         Text(
             text = "API Key",
-            style = LocalTypography.current.body1
+            style = LocalTypography.current.bodyLarge
         )
         Spacer(modifier = Modifier.height(8.dp))
         Row(
@@ -242,8 +236,8 @@ private fun ApiKeySetting(
                 supportingText = {
                     Text(
                         text = "Your API key is only stored locally on this device.",
-                        color = AiyoTheme.colors.textSecondary,
-                        style = AiyoTheme.typography.body3
+                        color = AiyoTheme.colorScheme.onSurfaceVariant,
+                        style = AiyoTheme.typography.bodySmall
                     )
                 }
             )
@@ -268,12 +262,12 @@ private fun ModelSelectionSetting(
             Column {
                 Text(
                     text = "Default Model",
-                    style = LocalTypography.current.body1
+                    style = LocalTypography.current.bodyLarge
                 )
                 Text(
                     text = "Requires app restart to apply change.",
-                    color = AiyoTheme.colors.textSecondary,
-                    style = AiyoTheme.typography.body3
+                    color = AiyoTheme.colorScheme.onSurfaceVariant,
+                    style = AiyoTheme.typography.bodySmall
                 )
             }
             ModelSelectorChip(selectedModel, onShowModelSheet)
@@ -285,20 +279,9 @@ private fun ModelSelectionSetting(
 @Composable
 fun ThemeSelectionSetting(
     modifier: Modifier = Modifier,
-    isDarkModeOn: Boolean = isSystemInDarkTheme(),
     selectedThemeType: ThemeType,
     onUpdateThemeType: (ThemeType) -> Unit
 ) {
-    val colors by remember(selectedThemeType) {
-        derivedStateOf {
-            when (selectedThemeType) {
-                ThemeType.Light -> LightColors
-                ThemeType.Dark -> DarkColors
-                ThemeType.System -> if (isDarkModeOn) DarkColors else LightColors
-            }
-        }
-    }
-    LocalColors.current.value = colors
     SingleChoiceSegmentedButtonRow(modifier) {
         ThemeType.entries.forEach { themeType ->
             SegmentedButton(
@@ -309,10 +292,10 @@ fun ThemeSelectionSetting(
                     count = ThemeType.entries.size
                 ),
                 colors = SegmentedButtonDefaults.colors(
-                    activeContainerColor = AiyoTheme.colors.primary,
-                    activeContentColor = AiyoTheme.colors.onPrimary,
-                    inactiveContainerColor = AiyoTheme.colors.surface,
-                    inactiveContentColor = AiyoTheme.colors.onSurface
+                    activeContainerColor = AiyoTheme.colorScheme.primary,
+                    activeContentColor = AiyoTheme.colorScheme.onPrimary,
+                    inactiveContainerColor = AiyoTheme.colorScheme.surface,
+                    inactiveContentColor = AiyoTheme.colorScheme.onSurface
                 )
             ) {
                 androidx.compose.material3.Text(

@@ -40,7 +40,7 @@ fun RenameConversationDialog(
         content = {
             Card {
                 Column(modifier = Modifier.padding(24.dp)) {
-                    Text(text = "Rename conversation", style = LocalTypography.current.h3)
+                    Text(text = "Rename conversation", style = LocalTypography.current.headlineSmall)
                     Spacer(modifier = Modifier.height(16.dp))
                     OutlinedTextField(
                         value = key,

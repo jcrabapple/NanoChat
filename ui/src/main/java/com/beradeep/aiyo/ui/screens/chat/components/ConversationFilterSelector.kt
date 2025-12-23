@@ -33,10 +33,10 @@ fun ConversationFilterSelector(
                     count = ConversationFilter.entries.size
                 ),
                 colors = SegmentedButtonDefaults.colors(
-                    activeContainerColor = AiyoTheme.colors.primary,
-                    activeContentColor = AiyoTheme.colors.onPrimary,
-                    inactiveContainerColor = AiyoTheme.colors.surface,
-                    inactiveContentColor = AiyoTheme.colors.onSurface
+                    activeContainerColor = AiyoTheme.colorScheme.primary,
+                    activeContentColor = AiyoTheme.colorScheme.onPrimary,
+                    inactiveContainerColor = AiyoTheme.colorScheme.surface,
+                    inactiveContentColor = AiyoTheme.colorScheme.onSurface
                 )
             ) {
                 Text(

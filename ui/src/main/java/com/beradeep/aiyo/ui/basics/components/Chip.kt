@@ -230,12 +230,12 @@ internal object ChipDefaults {
     fun primaryFilled(shape: Shape) = ChipStyle(
         colors =
         ChipColors(
-            containerColor = AiyoTheme.colors.surface,
-            contentColor = AiyoTheme.colors.onSurface,
-            selectedContainerColor = AiyoTheme.colors.primary,
-            selectedContentColor = AiyoTheme.colors.onPrimary,
-            disabledContainerColor = AiyoTheme.colors.disabled,
-            disabledContentColor = AiyoTheme.colors.onDisabled
+            containerColor = AiyoTheme.colorScheme.surface,
+            contentColor = AiyoTheme.colorScheme.onSurface,
+            selectedContainerColor = AiyoTheme.colorScheme.primary,
+            selectedContentColor = AiyoTheme.colorScheme.onPrimary,
+            disabledContainerColor = AiyoTheme.colorScheme.surfaceVariant.copy(alpha = 0.38f),
+            disabledContentColor = AiyoTheme.colorScheme.onSurface.copy(alpha = 0.38f)
         ),
         shape = shape,
         elevation = null,
@@ -246,12 +246,12 @@ internal object ChipDefaults {
     fun primaryElevated(shape: Shape) = ChipStyle(
         colors =
         ChipColors(
-            containerColor = AiyoTheme.colors.surface,
-            contentColor = AiyoTheme.colors.onSurface,
-            selectedContainerColor = AiyoTheme.colors.primary,
-            selectedContentColor = AiyoTheme.colors.onPrimary,
-            disabledContainerColor = AiyoTheme.colors.disabled,
-            disabledContentColor = AiyoTheme.colors.onDisabled
+            containerColor = AiyoTheme.colorScheme.surface,
+            contentColor = AiyoTheme.colorScheme.onSurface,
+            selectedContainerColor = AiyoTheme.colorScheme.primary,
+            selectedContentColor = AiyoTheme.colorScheme.onPrimary,
+            disabledContainerColor = AiyoTheme.colorScheme.surfaceVariant.copy(alpha = 0.38f),
+            disabledContentColor = AiyoTheme.colorScheme.onSurface.copy(alpha = 0.38f)
         ),
         shape = shape,
         elevation = chipElevation(),
@@ -262,15 +262,15 @@ internal object ChipDefaults {
     fun primaryOutlined(shape: Shape) = ChipStyle(
         colors =
         ChipColors(
-            containerColor = AiyoTheme.colors.transparent,
-            contentColor = AiyoTheme.colors.primary,
-            outlineColor = AiyoTheme.colors.primary,
-            selectedContainerColor = AiyoTheme.colors.primary,
-            selectedOutlineColor = AiyoTheme.colors.primary,
-            selectedContentColor = AiyoTheme.colors.onPrimary,
-            disabledContainerColor = AiyoTheme.colors.transparent,
-            disabledContentColor = AiyoTheme.colors.onDisabled,
-            disabledOutlineColor = AiyoTheme.colors.disabled
+            containerColor = Color.Transparent,
+            contentColor = AiyoTheme.colorScheme.primary,
+            outlineColor = AiyoTheme.colorScheme.primary,
+            selectedContainerColor = AiyoTheme.colorScheme.primary,
+            selectedOutlineColor = AiyoTheme.colorScheme.primary,
+            selectedContentColor = AiyoTheme.colorScheme.onPrimary,
+            disabledContainerColor = Color.Transparent,
+            disabledContentColor = AiyoTheme.colorScheme.onSurface.copy(alpha = 0.38f),
+            disabledOutlineColor = AiyoTheme.colorScheme.outline.copy(alpha = 0.12f)
         ),
         shape = shape,
         elevation = null,
@@ -344,7 +344,7 @@ fun PrimaryChipPreview() {
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         DummyIconForChipPreview()
-                        BasicText("Chip", style = AiyoTheme.typography.label3)
+                        BasicText("Chip", style = AiyoTheme.typography.labelSmall)
                     }
                 }
 
@@ -354,7 +354,7 @@ fun PrimaryChipPreview() {
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         DummyIconForChipPreview()
-                        BasicText("Chip", style = AiyoTheme.typography.label3)
+                        BasicText("Chip", style = AiyoTheme.typography.labelSmall)
                     }
                 }
 
@@ -364,7 +364,7 @@ fun PrimaryChipPreview() {
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         DummyIconForChipPreview()
-                        BasicText("Chip", style = AiyoTheme.typography.label3)
+                        BasicText("Chip", style = AiyoTheme.typography.labelSmall)
                     }
                 }
 
@@ -374,7 +374,7 @@ fun PrimaryChipPreview() {
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         DummyIconForChipPreview()
-                        BasicText("Chip", style = AiyoTheme.typography.label3)
+                        BasicText("Chip", style = AiyoTheme.typography.labelSmall)
                     }
                 }
             }
@@ -385,7 +385,7 @@ fun PrimaryChipPreview() {
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         DummyIconForChipPreview()
-                        BasicText("Chip", style = AiyoTheme.typography.label3)
+                        BasicText("Chip", style = AiyoTheme.typography.labelSmall)
                     }
                 }
 
@@ -395,7 +395,7 @@ fun PrimaryChipPreview() {
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         DummyIconForChipPreview()
-                        BasicText("Chip", style = AiyoTheme.typography.label3)
+                        BasicText("Chip", style = AiyoTheme.typography.labelSmall)
                     }
                 }
 
@@ -405,7 +405,7 @@ fun PrimaryChipPreview() {
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         DummyIconForChipPreview()
-                        BasicText("Chip", style = AiyoTheme.typography.label3)
+                        BasicText("Chip", style = AiyoTheme.typography.labelSmall)
                     }
                 }
                 ElevatedChip(enabled = false) {
@@ -414,7 +414,7 @@ fun PrimaryChipPreview() {
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         DummyIconForChipPreview()
-                        BasicText("Chip", style = AiyoTheme.typography.label3)
+                        BasicText("Chip", style = AiyoTheme.typography.labelSmall)
                     }
                 }
             }
@@ -425,7 +425,7 @@ fun PrimaryChipPreview() {
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         DummyIconForChipPreview()
-                        BasicText("Chip", style = AiyoTheme.typography.label3)
+                        BasicText("Chip", style = AiyoTheme.typography.labelSmall)
                     }
                 }
 
@@ -435,7 +435,7 @@ fun PrimaryChipPreview() {
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         DummyIconForChipPreview()
-                        BasicText("Chip", style = AiyoTheme.typography.label3)
+                        BasicText("Chip", style = AiyoTheme.typography.labelSmall)
                     }
                 }
 
@@ -445,7 +445,7 @@ fun PrimaryChipPreview() {
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         DummyIconForChipPreview()
-                        BasicText("Chip", style = AiyoTheme.typography.label3)
+                        BasicText("Chip", style = AiyoTheme.typography.labelSmall)
                     }
                 }
 
@@ -455,7 +455,7 @@ fun PrimaryChipPreview() {
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         DummyIconForChipPreview()
-                        BasicText("Chip", style = AiyoTheme.typography.label3)
+                        BasicText("Chip", style = AiyoTheme.typography.labelSmall)
                     }
                 }
             }

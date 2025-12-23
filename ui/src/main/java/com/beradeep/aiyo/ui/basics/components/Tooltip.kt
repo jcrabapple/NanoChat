@@ -104,7 +104,7 @@ fun TooltipScope.Tooltip(
     caretSize: DpSize = TooltipDefaults.CaretSize,
     maxWidth: Dp = TooltipDefaults.MaxWidth,
     shape: Shape = TooltipDefaults.Shape,
-    containerColor: Color = AiyoTheme.colors.surface,
+    containerColor: Color = AiyoTheme.colorScheme.surface,
     shadowElevation: Dp = TooltipDefaults.ShadowElevation,
     content: @Composable () -> Unit
 ) {

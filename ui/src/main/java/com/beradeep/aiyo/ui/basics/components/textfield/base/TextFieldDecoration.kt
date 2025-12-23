@@ -90,7 +90,7 @@ internal fun CommonDecorationBox(
         val decoratedLabel: @Composable (() -> Unit)? =
             label?.let {
                 @Composable {
-                    Decoration(labelColor, AiyoTheme.typography.label1, it)
+                    Decoration(labelColor, AiyoTheme.typography.labelLarge, it)
                 }
             }
 
@@ -101,7 +101,7 @@ internal fun CommonDecorationBox(
                     Box(modifier.alpha(placeholderAlphaProgress)) {
                         Decoration(
                             contentColor = placeholderColor,
-                            typography = AiyoTheme.typography.input,
+                            typography = AiyoTheme.typography.bodyLarge,
                             content = placeholder
                         )
                     }
@@ -116,7 +116,7 @@ internal fun CommonDecorationBox(
                 @Composable {
                     Decoration(
                         contentColor = prefixColor,
-                        typography = AiyoTheme.typography.input,
+                        typography = AiyoTheme.typography.bodyLarge,
                         content = prefix
                     )
                 }
@@ -130,7 +130,7 @@ internal fun CommonDecorationBox(
                 @Composable {
                     Decoration(
                         contentColor = suffixColor,
-                        typography = AiyoTheme.typography.input,
+                        typography = AiyoTheme.typography.bodyLarge,
                         content = suffix
                     )
                 }
@@ -164,7 +164,7 @@ internal fun CommonDecorationBox(
                 @Composable {
                     Decoration(
                         contentColor = supportingTextColor,
-                        typography = AiyoTheme.typography.body2,
+                        typography = AiyoTheme.typography.bodyMedium,
                         content = it
                     )
                 }

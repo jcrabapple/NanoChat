@@ -66,9 +66,9 @@ fun RowScope.ChatInputTextField(
                         imageVector = Icons.Rounded.Language,
                         tint =
                         if (isWebSearchEnabled) {
-                            AiyoTheme.colors.tertiary
+                            AiyoTheme.colorScheme.tertiary
                         } else {
-                            AiyoTheme.colors.primary
+                            AiyoTheme.colorScheme.primary
                         }
                     )
                 }
@@ -107,9 +107,9 @@ fun RowScope.ChatInputTextField(
                             painter = painterResource(R.drawable.cognition_24px),
                             tint =
                             if (reasonEffort != Reason.None) {
-                                AiyoTheme.colors.tertiary
+                                AiyoTheme.colorScheme.tertiary
                             } else {
-                                AiyoTheme.colors.primary
+                                AiyoTheme.colorScheme.primary
                             }
                         )
                     }

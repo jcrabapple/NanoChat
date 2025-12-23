@@ -32,8 +32,8 @@ fun ModelSelectorChip(model: Model, onClick: () -> Unit) {
         ) {
             Text(
                 text = "NanoGPT",
-                style = LocalTypography.current.label1,
-                color = AiyoTheme.colors.textSecondary,
+                style = LocalTypography.current.labelLarge,
+                color = AiyoTheme.colorScheme.onSurfaceVariant,
                 fontStyle = FontStyle.Italic
             )
             ElevatedChip(
@@ -44,7 +44,7 @@ fun ModelSelectorChip(model: Model, onClick: () -> Unit) {
                 trailingIcon = {
                     Icon(
                         imageVector = Icons.Default.ArrowDropDown,
-                        tint = AiyoTheme.colors.tertiary,
+                        tint = AiyoTheme.colorScheme.tertiary,
                         contentDescription = "Select Model",
                         modifier = Modifier.size(16.dp)
                     )
@@ -53,8 +53,8 @@ fun ModelSelectorChip(model: Model, onClick: () -> Unit) {
                 Spacer(Modifier.width(6.dp))
                 Text(
                     text = model.id,
-                    color = AiyoTheme.colors.tertiary,
-                    style = LocalTypography.current.body3
+                    color = AiyoTheme.colorScheme.tertiary,
+                    style = LocalTypography.current.bodySmall
                 )
             }
         }

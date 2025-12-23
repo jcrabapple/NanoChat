@@ -219,11 +219,11 @@ object CardDefaults {
 
     @Composable
     fun cardColors(
-        containerColor: Color = AiyoTheme.colors.surface,
-        contentColor: Color = AiyoTheme.colors.onSurface,
+        containerColor: Color = AiyoTheme.colorScheme.surface,
+        contentColor: Color = AiyoTheme.colorScheme.onSurface,
         disabledContainerColor: Color =
-            AiyoTheme.colors.disabled,
-        disabledContentColor: Color = AiyoTheme.colors.onDisabled
+            AiyoTheme.colorScheme.surfaceVariant.copy(alpha = 0.38f),
+        disabledContentColor: Color = AiyoTheme.colorScheme.onSurface.copy(alpha = 0.38f)
     ): CardColors = CardColors(
         containerColor = containerColor,
         contentColor = contentColor,
@@ -233,11 +233,11 @@ object CardDefaults {
 
     @Composable
     fun elevatedCardColors(
-        containerColor: Color = AiyoTheme.colors.background,
-        contentColor: Color = AiyoTheme.colors.onBackground,
+        containerColor: Color = AiyoTheme.colorScheme.background,
+        contentColor: Color = AiyoTheme.colorScheme.onBackground,
         disabledContainerColor: Color =
-            AiyoTheme.colors.disabled,
-        disabledContentColor: Color = AiyoTheme.colors.onDisabled
+            AiyoTheme.colorScheme.surfaceVariant.copy(alpha = 0.38f),
+        disabledContentColor: Color = AiyoTheme.colorScheme.onSurface.copy(alpha = 0.38f)
     ): CardColors = CardColors(
         containerColor = containerColor,
         contentColor = contentColor,
@@ -247,11 +247,11 @@ object CardDefaults {
 
     @Composable
     fun outlinedCardColors(
-        containerColor: Color = AiyoTheme.colors.background,
-        contentColor: Color = AiyoTheme.colors.onBackground,
+        containerColor: Color = AiyoTheme.colorScheme.background,
+        contentColor: Color = AiyoTheme.colorScheme.onBackground,
         disabledContainerColor: Color =
-            AiyoTheme.colors.disabled,
-        disabledContentColor: Color = AiyoTheme.colors.onDisabled
+            AiyoTheme.colorScheme.surfaceVariant.copy(alpha = 0.38f),
+        disabledContentColor: Color = AiyoTheme.colorScheme.onSurface.copy(alpha = 0.38f)
     ): CardColors = CardColors(
         containerColor = containerColor,
         contentColor = contentColor,
@@ -263,9 +263,9 @@ object CardDefaults {
     fun outlinedCardBorder(enabled: Boolean = true): BorderStroke {
         val color =
             if (enabled) {
-                AiyoTheme.colors.outline
+                AiyoTheme.colorScheme.outline
             } else {
-                AiyoTheme.colors.disabled
+                AiyoTheme.colorScheme.outline.copy(alpha = 0.12f)
             }
         return remember(color) { BorderStroke(BorderWidth, color) }
     }
@@ -313,7 +313,7 @@ fun CardComponentSample() {
         verticalArrangement = Arrangement.spacedBy(24.dp)
     ) {
         Column {
-            BasicText(text = "Default Card", style = LocalTypography.current.h3)
+            BasicText(text = "Default Card", style = LocalTypography.current.headlineSmall)
             Spacer(modifier = Modifier.height(8.dp))
 
             Card(
@@ -322,7 +322,7 @@ fun CardComponentSample() {
         }
 
         Column {
-            BasicText(text = "Elevated Card with Action", style = LocalTypography.current.h3)
+            BasicText(text = "Elevated Card with Action", style = LocalTypography.current.headlineSmall)
             ElevatedCard(
                 modifier = cardModifier,
                 onClick = { /* Handle click */ }
@@ -331,14 +331,14 @@ fun CardComponentSample() {
 
         // Outlined Card
         Column {
-            BasicText(text = "Custom Outlined Card", style = LocalTypography.current.h3)
+            BasicText(text = "Custom Outlined Card", style = LocalTypography.current.headlineSmall)
             OutlinedCard(
                 modifier = cardModifier
             ) {}
         }
 
         Column {
-            BasicText(text = "Disabled Card", style = LocalTypography.current.h3)
+            BasicText(text = "Disabled Card", style = LocalTypography.current.headlineSmall)
             Card(
                 modifier = cardModifier,
                 onClick = { },
@@ -354,7 +354,7 @@ fun CardComponentSample() {
         }
 
         Column {
-            BasicText(text = "Custom Colored Card", style = LocalTypography.current.h3)
+            BasicText(text = "Custom Colored Card", style = LocalTypography.current.headlineSmall)
             Card(
                 modifier = cardModifier,
                 colors =
@@ -368,7 +368,7 @@ fun CardComponentSample() {
         Column {
             BasicText(
                 text = "Outlined Card with Hover Elevation",
-                style = LocalTypography.current.h3
+                style = LocalTypography.current.headlineSmall
             )
             OutlinedCard(
                 modifier = cardModifier,
@@ -389,7 +389,7 @@ fun CardComponentSample() {
 
         // Interactive Card
         Column {
-            BasicText(text = "Interactive Card", style = LocalTypography.current.h3)
+            BasicText(text = "Interactive Card", style = LocalTypography.current.headlineSmall)
             Card(
                 modifier = cardModifier,
                 onClick = { /* Handle click */ },

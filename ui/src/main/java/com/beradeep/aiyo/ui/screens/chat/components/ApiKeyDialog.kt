@@ -42,7 +42,7 @@ fun ApiKeyDialog(
         content = {
             Card {
                 Column(modifier = Modifier.padding(24.dp)) {
-                    Text(text = "NanoGPT API key", style = LocalTypography.current.h3)
+                    Text(text = "NanoGPT API key", style = LocalTypography.current.headlineSmall)
                     Spacer(modifier = Modifier.height(16.dp))
                     OutlinedTextField(
                         value = key,

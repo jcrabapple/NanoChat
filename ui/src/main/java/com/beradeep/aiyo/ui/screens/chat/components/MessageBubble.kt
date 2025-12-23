@@ -35,7 +35,7 @@ fun MessageBubble(content: String, isUser: Boolean, markdownState: State) {
         if (isUser) {
             Card(modifier, shape = MessageBubbleDefaults.UserBubbleShape) {
                 Box(Modifier.padding(12.dp)) {
-                    Text(text = content, style = LocalTypography.current.body1)
+                    Text(text = content, style = LocalTypography.current.bodyLarge)
                 }
             }
         } else {
@@ -49,11 +49,11 @@ fun MessageBubble(content: String, isUser: Boolean, markdownState: State) {
                         codeBlock = highlightedCodeBlock,
                         codeFence = highlightedCodeFence
                     ),
-                    loading = { Text(text = content, style = LocalTypography.current.body1) },
+                    loading = { Text(text = content, style = LocalTypography.current.bodyLarge) },
                     error = {
                         Text(
                             text = "Parse error: ${(markdownState as? State.Error)?.result}",
-                            style = LocalTypography.current.body1
+                            style = LocalTypography.current.bodyLarge
                         )
                     }
                 )

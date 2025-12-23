@@ -130,49 +130,49 @@ fun TypographySample() {
     ) {
         Text(
             text = "H1 Heading",
-            style = typography.h1
+            style = typography.headlineLarge
         )
         Text(
             text = "H2 Heading",
-            style = typography.h2
+            style = typography.headlineMedium
         )
         Text(
             text = "H3 Heading",
-            style = typography.h3
+            style = typography.headlineSmall
         )
         Text(
             text = "H4 Heading",
-            style = typography.h4
+            style = typography.titleLarge
         )
 
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
             text = "This is body1 text.",
-            style = typography.body1
+            style = typography.bodyLarge
         )
         Text(
             text = "This is body2 text.",
-            style = typography.body2
+            style = typography.bodyMedium
         )
         Text(
             text = "Body3 text for fine print.",
-            style = typography.body3
+            style = typography.bodySmall
         )
 
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
             text = "Label1: Form Label",
-            style = typography.label1
+            style = typography.labelLarge
         )
         Text(
             text = "Label2: Secondary Info",
-            style = typography.label2
+            style = typography.labelMedium
         )
         Text(
             text = "Label3: Tiny Details",
-            style = typography.label3
+            style = typography.labelSmall
         )
 
         Spacer(modifier = Modifier.height(16.dp))

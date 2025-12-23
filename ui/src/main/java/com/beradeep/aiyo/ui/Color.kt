@@ -1,11 +1,17 @@
 package com.beradeep.aiyo.ui
 
+import android.os.Build
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.ColorScheme
+import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.dynamicDarkColorScheme
+import androidx.compose.material3.dynamicLightColorScheme
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.compositionLocalOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import com.mikepenz.markdown.model.DefaultMarkdownColors
 import com.mikepenz.markdown.model.MarkdownColors
 
@@ -56,116 +62,103 @@ val Green200: Color = Color(0xFFC2F5DA)
 val Green100: Color = Color(0xFFD0FBE9)
 val Green50: Color = Color(0xFFE0FAEC)
 
-@Immutable
-data class Colors(
-    val primary: Color,
-    val onPrimary: Color,
-    val secondary: Color,
-    val onSecondary: Color,
-    val tertiary: Color,
-    val onTertiary: Color,
-    val error: Color,
-    val onError: Color,
-    val success: Color,
-    val onSuccess: Color,
-    val disabled: Color,
-    val onDisabled: Color,
-    val surface: Color,
-    val onSurface: Color,
-    val background: Color,
-    val onBackground: Color,
-    val outline: Color,
-    val transparent: Color = Color.Transparent,
-    val white: Color = White,
-    val black: Color = Black,
-    val text: Color,
-    val textSecondary: Color,
-    val textDisabled: Color,
-    val scrim: Color,
-    val elevation: Color
+// Material Design 3 Light Color Scheme
+internal val LightColorScheme: ColorScheme = lightColorScheme(
+    primary = Black,
+    onPrimary = White,
+    primaryContainer = Gray200,
+    onPrimaryContainer = Black,
+    secondary = Gray400,
+    onSecondary = Black,
+    secondaryContainer = Gray300,
+    onSecondaryContainer = Gray800,
+    tertiary = Blue900,
+    onTertiary = White,
+    tertiaryContainer = Blue100,
+    onTertiaryContainer = Blue900,
+    error = Red600,
+    onError = White,
+    errorContainer = Red100,
+    onErrorContainer = Red900,
+    background = White,
+    onBackground = Black,
+    surface = Gray200,
+    onSurface = Black,
+    surfaceVariant = Gray100,
+    onSurfaceVariant = Gray700,
+    outline = Gray300,
+    outlineVariant = Gray200,
+    scrim = Color.Black.copy(alpha = 0.32f),
+    surfaceTint = Black,
+    inverseSurface = Gray900,
+    inverseOnSurface = White,
+    inversePrimary = White
 )
 
-internal val LightColors =
-    Colors(
-        primary = Black,
-        onPrimary = White,
-        secondary = Gray400,
-        onSecondary = Black,
-        tertiary = Blue900,
-        onTertiary = White,
-        surface = Gray200,
-        onSurface = Black,
-        error = Red600,
-        onError = White,
-        success = Green600,
-        onSuccess = White,
-        disabled = Gray100,
-        onDisabled = Gray500,
-        background = White,
-        onBackground = Black,
-        outline = Gray300,
-        transparent = Color.Transparent,
-        white = White,
-        black = Black,
-        text = Black,
-        textSecondary = Gray700,
-        textDisabled = Gray400,
-        scrim = Color.Black.copy(alpha = 0.32f),
-        elevation = Gray700
-    )
+// Material Design 3 Dark Color Scheme
+internal val DarkColorScheme: ColorScheme = darkColorScheme(
+    primary = White,
+    onPrimary = Black,
+    primaryContainer = Gray800,
+    onPrimaryContainer = White,
+    secondary = Gray400,
+    onSecondary = White,
+    secondaryContainer = Gray600,
+    onSecondaryContainer = Gray200,
+    tertiary = Blue300,
+    onTertiary = Black,
+    tertiaryContainer = Blue900,
+    onTertiaryContainer = Blue300,
+    error = Red400,
+    onError = Black,
+    errorContainer = Red900,
+    onErrorContainer = Red200,
+    background = Black,
+    onBackground = White,
+    surface = Gray900,
+    onSurface = White,
+    surfaceVariant = Gray800,
+    onSurfaceVariant = Gray300,
+    outline = Gray800,
+    outlineVariant = Gray700,
+    scrim = Color.Black.copy(alpha = 0.72f),
+    surfaceTint = White,
+    inverseSurface = Gray100,
+    inverseOnSurface = Black,
+    inversePrimary = Black
+)
 
-internal val DarkColors =
-    Colors(
-        primary = White,
-        onPrimary = Black,
-        secondary = Gray400,
-        onSecondary = White,
-        tertiary = Blue300,
-        onTertiary = Black,
-        surface = Gray900,
-        onSurface = White,
-        error = Red400,
-        onError = Black,
-        success = Green700,
-        onSuccess = Black,
-        disabled = Gray700,
-        onDisabled = Gray500,
-        background = Black,
-        onBackground = White,
-        outline = Gray800,
-        transparent = Color.Transparent,
-        white = White,
-        black = Black,
-        text = White,
-        textSecondary = Gray300,
-        textDisabled = Gray600,
-        scrim = Color.Black.copy(alpha = 0.72f),
-        elevation = Gray200
-    )
+// Dynamic color support for Android 12+
+@Composable
+fun dynamicColorScheme(): ColorScheme? {
+    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+        val context = LocalContext.current
+        if (isSystemInDarkTheme()) {
+            dynamicDarkColorScheme(context)
+        } else {
+            dynamicLightColorScheme(context)
+        }
+    } else {
+        null
+    }
+}
 
-val LocalColors = staticCompositionLocalOf { mutableStateOf(LightColors) }
+val LocalColorScheme = staticCompositionLocalOf { LightColorScheme }
 val LocalContentColor = compositionLocalOf { Color.Black }
 val LocalContentAlpha = compositionLocalOf { 1f }
 
-fun Colors.contentColorFor(backgroundColor: Color): Color = when (backgroundColor) {
-    primary -> onPrimary
-    secondary -> onSecondary
-    tertiary -> onTertiary
-    surface -> onSurface
-    error -> onError
-    success -> onSuccess
-    disabled -> onDisabled
-    background -> onBackground
-    else -> Color.Unspecified
-}
+// Legacy support for existing code
+@Deprecated("Use MaterialTheme.colorScheme instead", ReplaceWith("MaterialTheme.colorScheme"))
+val Colors: ColorScheme
+    @Composable get() = LocalColorScheme.current
 
 @Composable
 fun markdownColor(
-    text: Color = AiyoTheme.colors.text,
-    codeBackground: Color = AiyoTheme.colors.onBackground.copy(alpha = 0.1f),
+    text: Color = LocalColorScheme.current.onBackground,
+    codeBackground: Color = LocalColorScheme.current.onBackground.copy(alpha = 0.1f),
     inlineCodeBackground: Color = codeBackground,
-    dividerColor: Color = AiyoTheme.colors.textDisabled,
-    tableBackground: Color = AiyoTheme.colors.onBackground.copy(alpha = 0.02f)
+    dividerColor: Color = LocalColorScheme.current.onSurface.copy(alpha = 0.12f),
+    tableBackground: Color = LocalColorScheme.current.surfaceVariant.copy(alpha = 0.5f)
 ): MarkdownColors = DefaultMarkdownColors(
     text = text,
     codeBackground = codeBackground,

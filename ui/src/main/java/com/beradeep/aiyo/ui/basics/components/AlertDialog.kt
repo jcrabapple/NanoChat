@@ -54,10 +54,10 @@ fun AlertDialog(
     dismissButtonText: String? = "Cancel",
     icon: (@Composable () -> Unit)? = null,
     shape: Shape = DialogShape,
-    containerColor: Color = AiyoTheme.colors.surface,
-    iconContentColor: Color = AiyoTheme.colors.primary,
-    titleContentColor: Color = AiyoTheme.colors.primary,
-    textContentColor: Color = AiyoTheme.colors.primary,
+    containerColor: Color = AiyoTheme.colorScheme.surface,
+    iconContentColor: Color = AiyoTheme.colorScheme.primary,
+    titleContentColor: Color = AiyoTheme.colorScheme.primary,
+    textContentColor: Color = AiyoTheme.colorScheme.primary,
     elevation: Dp = DialogElevation,
     properties: DialogProperties = DialogProperties(),
     content: @Composable (() -> Unit)? = null
@@ -218,7 +218,7 @@ internal fun AlertDialogContent(
             title?.let {
                 ProvideContentColorTextStyle(
                     contentColor = titleContentColor,
-                    textStyle = AiyoTheme.typography.h3
+                    textStyle = AiyoTheme.typography.headlineSmall
                 ) {
                     Box(
                         Modifier
@@ -236,7 +236,7 @@ internal fun AlertDialogContent(
                 }
             }
             text?.let {
-                val textStyle = AiyoTheme.typography.body1
+                val textStyle = AiyoTheme.typography.bodyLarge
                 ProvideContentColorTextStyle(
                     contentColor = textContentColor,
                     textStyle = textStyle
@@ -252,7 +252,7 @@ internal fun AlertDialogContent(
                 }
             }
             Box(modifier = Modifier.align(Alignment.End)) {
-                val textStyle = AiyoTheme.typography.body2
+                val textStyle = AiyoTheme.typography.bodyMedium
                 ProvideContentColorTextStyle(
                     contentColor = buttonContentColor,
                     textStyle = textStyle,

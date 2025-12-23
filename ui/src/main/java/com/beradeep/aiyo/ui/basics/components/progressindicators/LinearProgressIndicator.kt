@@ -195,10 +195,10 @@ private fun DrawScope.drawLinearIndicatorTrack(
 
 object LinearProgressIndicatorDefaults {
     val Color: Color
-        @Composable get() = AiyoTheme.colors.primary
+        @Composable get() = AiyoTheme.colorScheme.primary
 
     val TrackColor: Color
-        @Composable get() = AiyoTheme.colors.transparent
+        @Composable get() = androidx.compose.ui.graphics.Color.Transparent
 
     val TrackHeight = 4.dp
     val StrokeStyle: StrokeCap = StrokeCap.Round
@@ -229,10 +229,10 @@ fun LinearProgressIndicatorPreview() {
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier.padding(16.dp)
         ) {
-            BasicText(text = "Determinate Progress", style = AiyoTheme.typography.body1)
+            BasicText(text = "Determinate Progress", style = AiyoTheme.typography.bodyLarge)
             LinearProgressIndicator(progress = 0.7f)
 
-            BasicText(text = "Indeterminate Progress", style = AiyoTheme.typography.body1)
+            BasicText(text = "Indeterminate Progress", style = AiyoTheme.typography.bodyLarge)
             LinearProgressIndicator()
         }
     }

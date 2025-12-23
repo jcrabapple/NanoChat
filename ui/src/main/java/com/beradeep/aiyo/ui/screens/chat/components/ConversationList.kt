@@ -53,9 +53,9 @@ fun ColumnScope.ConversationList(
                 modifier = Modifier.fillMaxWidth(),
                 color =
                 if (selectedConversation?.id == conversation.id) {
-                    AiyoTheme.colors.background
+                    AiyoTheme.colorScheme.background
                 } else {
-                    AiyoTheme.colors.surface
+                    AiyoTheme.colorScheme.surface
                 }
             ) {
                 Row(
@@ -69,15 +69,15 @@ fun ColumnScope.ConversationList(
                 ) {
                     Text(
                         text = conversation.title,
-                        style = LocalTypography.current.body1,
+                        style = LocalTypography.current.bodyLarge,
                         modifier = Modifier.weight(1f),
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis,
                         color =
                         if (selectedConversation?.id == conversation.id) {
-                            AiyoTheme.colors.tertiary
+                            AiyoTheme.colorScheme.tertiary
                         } else {
-                            AiyoTheme.colors.primary
+                            AiyoTheme.colorScheme.primary
                         }
                     )
                 }

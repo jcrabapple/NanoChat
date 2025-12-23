@@ -28,7 +28,7 @@ fun Scaffold(
     snackbarHost: @Composable () -> Unit = {},
     floatingActionButton: @Composable () -> Unit = {},
     floatingActionButtonPosition: FabPosition = FabPosition.End,
-    containerColor: Color = AiyoTheme.colors.background,
+    containerColor: Color = AiyoTheme.colorScheme.background,
     contentColor: Color = contentColorFor(containerColor),
     contentWindowInsets: WindowInsets = ScaffoldDefaults.contentWindowInsets,
     content: @Composable (PaddingValues) -> Unit

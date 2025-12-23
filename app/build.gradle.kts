@@ -15,8 +15,8 @@ android {
         applicationId = "com.beradeep.aiyo"
         minSdk = 24
         targetSdk = 36
-        versionCode = 9
-        versionName = "1.0.8"
+        versionCode = 10
+        versionName = "1.0.9"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -31,6 +31,9 @@ android {
     }
 
     buildTypes {
+        debug {
+            applicationIdSuffix = ".debug"
+        }
         release {
             isMinifyEnabled = true
             isShrinkResources = true

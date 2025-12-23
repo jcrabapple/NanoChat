@@ -114,8 +114,8 @@ private fun ChatScreen(
         drawerContent = {
             ModalDrawerSheet(
                 modifier = Modifier.fillMaxWidth(0.8f),
-                drawerContainerColor = AiyoTheme.colors.surface,
-                drawerContentColor = AiyoTheme.colors.onSurface
+                drawerContainerColor = AiyoTheme.colorScheme.surface,
+                drawerContentColor = AiyoTheme.colorScheme.onSurface
             ) {
                 Column(
                     Modifier.systemBarsPadding()
@@ -159,7 +159,7 @@ private fun ChatScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(top = 8.dp),
-                        color = AiyoTheme.colors.disabled
+                        color = AiyoTheme.colorScheme.outlineVariant
                     )
 
                     Column(
@@ -179,7 +179,7 @@ private fun ChatScreen(
                                 .padding(horizontal = 16.dp),
                             horizontalArrangement = Arrangement.SpaceBetween
                         ) {
-                            Text("Settings", style = LocalTypography.current.h4)
+                            Text("Settings", style = LocalTypography.current.titleLarge)
                             Icon(Icons.Filled.Settings)
                         }
                         Spacer(Modifier.height(24.dp))
@@ -373,8 +373,8 @@ private fun ChatScreen(
                         )
                         Text(
                             text = "Hello there! How can I assist you today?",
-                            style = AiyoTheme.typography.body1,
-                            color = AiyoTheme.colors.tertiary,
+                            style = AiyoTheme.typography.bodyLarge,
+                            color = AiyoTheme.colorScheme.tertiary,
                             fontStyle = FontStyle.Italic
                         )
                     }

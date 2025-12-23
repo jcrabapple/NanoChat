@@ -114,7 +114,7 @@ fun ChatOptions(
                             Text("Delete")
                             Icon(
                                 Icons.Outlined.Delete,
-                                tint = AiyoTheme.colors.error
+                                tint = AiyoTheme.colorScheme.error
                             )
                         }
                         Spacer(Modifier.height(16.dp))

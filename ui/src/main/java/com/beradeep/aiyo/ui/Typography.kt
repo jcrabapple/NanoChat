@@ -1,5 +1,6 @@
 package com.beradeep.aiyo.ui
 
+import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.runtime.staticCompositionLocalOf
@@ -18,106 +19,144 @@ import com.mikepenz.markdown.model.MarkdownTypography
 @Composable
 fun fontFamily() = FontFamily.Default
 
+// Custom typography wrapper that extends Material 3 Typography
 data class Typography(
-    val h1: TextStyle,
-    val h2: TextStyle,
-    val h3: TextStyle,
-    val h4: TextStyle,
-    val body1: TextStyle,
-    val body2: TextStyle,
-    val body3: TextStyle,
-    val label1: TextStyle,
-    val label2: TextStyle,
-    val label3: TextStyle,
-    val button: TextStyle,
-    val input: TextStyle
+    // Material 3 typography roles
+    val displayLarge: TextStyle,
+    val displayMedium: TextStyle,
+    val displaySmall: TextStyle,
+    val headlineLarge: TextStyle,
+    val headlineMedium: TextStyle,
+    val headlineSmall: TextStyle,
+    val titleLarge: TextStyle,
+    val titleMedium: TextStyle,
+    val titleSmall: TextStyle,
+    val bodyLarge: TextStyle,
+    val bodyMedium: TextStyle,
+    val bodySmall: TextStyle,
+    val labelLarge: TextStyle,
+    val labelMedium: TextStyle,
+    val labelSmall: TextStyle,
+
+    // Legacy support for existing code
+    @Deprecated("Use headlineLarge instead", ReplaceWith("headlineLarge"))
+    val h1: TextStyle = headlineLarge,
+    @Deprecated("Use headlineMedium instead", ReplaceWith("headlineMedium"))
+    val h2: TextStyle = headlineMedium,
+    @Deprecated("Use headlineSmall instead", ReplaceWith("headlineSmall"))
+    val h3: TextStyle = headlineSmall,
+    @Deprecated("Use titleLarge instead", ReplaceWith("titleLarge"))
+    val h4: TextStyle = titleLarge,
+    @Deprecated("Use bodyLarge instead", ReplaceWith("bodyLarge"))
+    val body1: TextStyle = bodyLarge,
+    @Deprecated("Use bodyMedium instead", ReplaceWith("bodyMedium"))
+    val body2: TextStyle = bodyMedium,
+    @Deprecated("Use bodySmall instead", ReplaceWith("bodySmall"))
+    val body3: TextStyle = bodySmall,
+    @Deprecated("Use labelLarge instead", ReplaceWith("labelLarge"))
+    val label1: TextStyle = labelLarge,
+    @Deprecated("Use labelMedium instead", ReplaceWith("labelMedium"))
+    val label2: TextStyle = labelMedium,
+    @Deprecated("Use labelSmall instead", ReplaceWith("labelSmall"))
+    val label3: TextStyle = labelSmall,
+    @Deprecated("Use labelLarge instead", ReplaceWith("labelLarge"))
+    val button: TextStyle = labelLarge,
+    @Deprecated("Use bodyLarge instead", ReplaceWith("bodyLarge"))
+    val input: TextStyle = bodyLarge
 )
 
+// Material Design 3 Typography defaults
 private val defaultTypography =
     Typography(
-        h1 =
-        TextStyle(
-            fontWeight = FontWeight.Bold,
+        displayLarge = TextStyle(
+            fontWeight = FontWeight.Normal,
+            fontSize = 57.sp,
+            lineHeight = 64.sp,
+            letterSpacing = (-0.25).sp
+        ),
+        displayMedium = TextStyle(
+            fontWeight = FontWeight.Normal,
+            fontSize = 45.sp,
+            lineHeight = 52.sp,
+            letterSpacing = 0.sp
+        ),
+        displaySmall = TextStyle(
+            fontWeight = FontWeight.Normal,
+            fontSize = 36.sp,
+            lineHeight = 44.sp,
+            letterSpacing = 0.sp
+        ),
+        headlineLarge = TextStyle(
+            fontWeight = FontWeight.Normal,
+            fontSize = 32.sp,
+            lineHeight = 40.sp,
+            letterSpacing = 0.sp
+        ),
+        headlineMedium = TextStyle(
+            fontWeight = FontWeight.Normal,
+            fontSize = 28.sp,
+            lineHeight = 36.sp,
+            letterSpacing = 0.sp
+        ),
+        headlineSmall = TextStyle(
+            fontWeight = FontWeight.Normal,
             fontSize = 24.sp,
             lineHeight = 32.sp,
             letterSpacing = 0.sp
         ),
-        h2 =
-        TextStyle(
-            fontWeight = FontWeight.Bold,
-            fontSize = 20.sp,
+        titleLarge = TextStyle(
+            fontWeight = FontWeight.Medium,
+            fontSize = 22.sp,
             lineHeight = 28.sp,
             letterSpacing = 0.sp
         ),
-        h3 =
-        TextStyle(
-            fontWeight = FontWeight.Bold,
+        titleMedium = TextStyle(
+            fontWeight = FontWeight.Medium,
             fontSize = 16.sp,
             lineHeight = 24.sp,
-            letterSpacing = 0.sp
+            letterSpacing = 0.1.sp
         ),
-        h4 =
-        TextStyle(
-            fontWeight = FontWeight.SemiBold,
-            fontSize = 16.sp,
-            lineHeight = 24.sp,
-            letterSpacing = 0.sp
-        ),
-        body1 =
-        TextStyle(
-            fontWeight = FontWeight.Normal,
-            fontSize = 16.sp,
-            lineHeight = 24.sp,
-            letterSpacing = 0.sp
-        ),
-        body2 =
-        TextStyle(
-            fontWeight = FontWeight.Normal,
-            fontSize = 14.sp,
-            lineHeight = 20.sp,
-            letterSpacing = 0.15.sp
-        ),
-        body3 =
-        TextStyle(
-            fontWeight = FontWeight.Normal,
-            fontSize = 12.sp,
-            lineHeight = 16.sp,
-            letterSpacing = 0.15.sp
-        ),
-        label1 =
-        TextStyle(
-            fontWeight = FontWeight.W500,
+        titleSmall = TextStyle(
+            fontWeight = FontWeight.Medium,
             fontSize = 14.sp,
             lineHeight = 20.sp,
             letterSpacing = 0.1.sp
         ),
-        label2 =
-        TextStyle(
-            fontWeight = FontWeight.W500,
+        bodyLarge = TextStyle(
+            fontWeight = FontWeight.Normal,
+            fontSize = 16.sp,
+            lineHeight = 24.sp,
+            letterSpacing = 0.5.sp
+        ),
+        bodyMedium = TextStyle(
+            fontWeight = FontWeight.Normal,
+            fontSize = 14.sp,
+            lineHeight = 20.sp,
+            letterSpacing = 0.25.sp
+        ),
+        bodySmall = TextStyle(
+            fontWeight = FontWeight.Normal,
+            fontSize = 12.sp,
+            lineHeight = 16.sp,
+            letterSpacing = 0.4.sp
+        ),
+        labelLarge = TextStyle(
+            fontWeight = FontWeight.Medium,
+            fontSize = 14.sp,
+            lineHeight = 20.sp,
+            letterSpacing = 0.1.sp
+        ),
+        labelMedium = TextStyle(
+            fontWeight = FontWeight.Medium,
             fontSize = 12.sp,
             lineHeight = 16.sp,
             letterSpacing = 0.5.sp
         ),
-        label3 =
-        TextStyle(
-            fontWeight = FontWeight.W500,
-            fontSize = 10.sp,
-            lineHeight = 12.sp,
+        labelSmall = TextStyle(
+            fontWeight = FontWeight.Medium,
+            fontSize = 11.sp,
+            lineHeight = 16.sp,
             letterSpacing = 0.5.sp
-        ),
-        button =
-        TextStyle(
-            fontWeight = FontWeight.W500,
-            fontSize = 14.sp,
-            lineHeight = 20.sp,
-            letterSpacing = 1.sp
-        ),
-        input =
-        TextStyle(
-            fontWeight = FontWeight.Normal,
-            fontSize = 16.sp,
-            lineHeight = 24.sp,
-            letterSpacing = 0.sp
         )
     )
 
@@ -126,47 +165,73 @@ fun provideTypography(): Typography {
     val fontFamily = fontFamily()
 
     return defaultTypography.copy(
-        h1 = defaultTypography.h1.copy(fontFamily = fontFamily),
-        h2 = defaultTypography.h2.copy(fontFamily = fontFamily),
-        h3 = defaultTypography.h3.copy(fontFamily = fontFamily),
-        h4 = defaultTypography.h4.copy(fontFamily = fontFamily),
-        body1 = defaultTypography.body1.copy(fontFamily = fontFamily),
-        body2 = defaultTypography.body2.copy(fontFamily = fontFamily),
-        body3 = defaultTypography.body3.copy(fontFamily = fontFamily),
-        label1 = defaultTypography.label1.copy(fontFamily = fontFamily),
-        label2 = defaultTypography.label2.copy(fontFamily = fontFamily),
-        label3 = defaultTypography.label3.copy(fontFamily = fontFamily),
-        button = defaultTypography.button.copy(fontFamily = fontFamily),
-        input = defaultTypography.input.copy(fontFamily = fontFamily)
+        displayLarge = defaultTypography.displayLarge.copy(fontFamily = fontFamily),
+        displayMedium = defaultTypography.displayMedium.copy(fontFamily = fontFamily),
+        displaySmall = defaultTypography.displaySmall.copy(fontFamily = fontFamily),
+        headlineLarge = defaultTypography.headlineLarge.copy(fontFamily = fontFamily),
+        headlineMedium = defaultTypography.headlineMedium.copy(fontFamily = fontFamily),
+        headlineSmall = defaultTypography.headlineSmall.copy(fontFamily = fontFamily),
+        titleLarge = defaultTypography.titleLarge.copy(fontFamily = fontFamily),
+        titleMedium = defaultTypography.titleMedium.copy(fontFamily = fontFamily),
+        titleSmall = defaultTypography.titleSmall.copy(fontFamily = fontFamily),
+        bodyLarge = defaultTypography.bodyLarge.copy(fontFamily = fontFamily),
+        bodyMedium = defaultTypography.bodyMedium.copy(fontFamily = fontFamily),
+        bodySmall = defaultTypography.bodySmall.copy(fontFamily = fontFamily),
+        labelLarge = defaultTypography.labelLarge.copy(fontFamily = fontFamily),
+        labelMedium = defaultTypography.labelMedium.copy(fontFamily = fontFamily),
+        labelSmall = defaultTypography.labelSmall.copy(fontFamily = fontFamily)
     )
 }
 
 val LocalTypography = staticCompositionLocalOf { defaultTypography }
 val LocalTextStyle = compositionLocalOf(structuralEqualityPolicy()) { TextStyle.Default }
 
+// Material 3 Typography support
+fun material3Typography(): androidx.compose.material3.Typography {
+    val fontFamily = FontFamily.Default
+
+    return androidx.compose.material3.Typography(
+        displayLarge = defaultTypography.displayLarge.copy(fontFamily = fontFamily),
+        displayMedium = defaultTypography.displayMedium.copy(fontFamily = fontFamily),
+        displaySmall = defaultTypography.displaySmall.copy(fontFamily = fontFamily),
+        headlineLarge = defaultTypography.headlineLarge.copy(fontFamily = fontFamily),
+        headlineMedium = defaultTypography.headlineMedium.copy(fontFamily = fontFamily),
+        headlineSmall = defaultTypography.headlineSmall.copy(fontFamily = fontFamily),
+        titleLarge = defaultTypography.titleLarge.copy(fontFamily = fontFamily),
+        titleMedium = defaultTypography.titleMedium.copy(fontFamily = fontFamily),
+        titleSmall = defaultTypography.titleSmall.copy(fontFamily = fontFamily),
+        bodyLarge = defaultTypography.bodyLarge.copy(fontFamily = fontFamily),
+        bodyMedium = defaultTypography.bodyMedium.copy(fontFamily = fontFamily),
+        bodySmall = defaultTypography.bodySmall.copy(fontFamily = fontFamily),
+        labelLarge = defaultTypography.labelLarge.copy(fontFamily = fontFamily),
+        labelMedium = defaultTypography.labelMedium.copy(fontFamily = fontFamily),
+        labelSmall = defaultTypography.labelSmall.copy(fontFamily = fontFamily)
+    )
+}
+
 @Composable
 fun markdownTypography(
-    h1: TextStyle = provideTypography().h1,
-    h2: TextStyle = provideTypography().h2,
-    h3: TextStyle = provideTypography().h3,
-    h4: TextStyle = provideTypography().h4,
-    h5: TextStyle = provideTypography().body1,
-    h6: TextStyle = provideTypography().label1,
-    text: TextStyle = provideTypography().body1,
-    code: TextStyle = provideTypography().body2.copy(fontFamily = FontFamily.Monospace),
+    h1: TextStyle = provideTypography().headlineLarge,
+    h2: TextStyle = provideTypography().headlineMedium,
+    h3: TextStyle = provideTypography().headlineSmall,
+    h4: TextStyle = provideTypography().titleLarge,
+    h5: TextStyle = provideTypography().titleMedium,
+    h6: TextStyle = provideTypography().titleSmall,
+    text: TextStyle = provideTypography().bodyLarge,
+    code: TextStyle = provideTypography().bodyMedium.copy(fontFamily = FontFamily.Monospace),
     inlineCode: TextStyle = text.copy(fontFamily = FontFamily.Monospace),
-    quote: TextStyle = provideTypography().body1.plus(SpanStyle(fontStyle = FontStyle.Italic)),
-    paragraph: TextStyle = provideTypography().body1,
-    ordered: TextStyle = provideTypography().body1,
-    bullet: TextStyle = provideTypography().body1,
-    list: TextStyle = provideTypography().body1,
+    quote: TextStyle = provideTypography().bodyLarge.plus(SpanStyle(fontStyle = FontStyle.Italic)),
+    paragraph: TextStyle = provideTypography().bodyLarge,
+    ordered: TextStyle = provideTypography().bodyLarge,
+    bullet: TextStyle = provideTypography().bodyLarge,
+    list: TextStyle = provideTypography().bodyLarge,
     textLink: TextLinkStyles =
         TextLinkStyles(
             style =
             provideTypography()
-                .body3
+                .bodySmall
                 .copy(
-                    color = AiyoTheme.colors.tertiary,
+                    color = LocalColorScheme.current.tertiary,
                     fontWeight = FontWeight.Bold,
                     textDecoration = TextDecoration.Underline
                 ).toSpanStyle()
