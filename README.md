@@ -9,6 +9,7 @@ NanoChat is an AI chat app that allows you to chat with hundreds of models by br
 - 💬 Chat with any model of your choice
 - ✨ Access to all models on NanoGPT
 - 🧠 Supports reasoning, web-search 🌐, and chat history 📜
+- 🎨 Modern Material 3 Design & Adaptive Icon
 - 🔒 Privacy-respectful: no data is collected by NanoChat
 
 ## Installation
@@ -28,7 +29,7 @@ NanoChat is an AI chat app that allows you to chat with hundreds of models by br
 ## Technology Stack
 
 - **Kotlin** - Primary programming language
-- **Jetpack Compose** - Modern UI toolkit
+- **Jetpack Compose (Material 3)** - Modern UI toolkit
 - **MVVM Architecture** - Clean architecture pattern
 - **[OpenAI Kotlin](https://github.com/aallam/openai-kotlin)** - For interacting with NanoGPT API
 
